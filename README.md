@@ -1,1 +1,0 @@
-# serverless-project first commit
