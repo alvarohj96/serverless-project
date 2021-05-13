@@ -6,6 +6,7 @@ frameworkVersion: ">=1.1.0"
 
 provider:
   name: aws
+  stage: Release
   runtime: python3.8
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
