@@ -74,31 +74,51 @@
     "CreateLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
+<<<<<<< HEAD
+        "LogGroupName": "/aws/lambda/api-rest-dev-create"
+=======
         "LogGroupName": "/aws/lambda/api-rest-Stage-create"
+>>>>>>> develop
       }
     },
     "ListLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
+<<<<<<< HEAD
+        "LogGroupName": "/aws/lambda/api-rest-dev-list"
+=======
         "LogGroupName": "/aws/lambda/api-rest-Stage-list"
+>>>>>>> develop
       }
     },
     "GetLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
+<<<<<<< HEAD
+        "LogGroupName": "/aws/lambda/api-rest-dev-get"
+=======
         "LogGroupName": "/aws/lambda/api-rest-Stage-get"
+>>>>>>> develop
       }
     },
     "UpdateLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
+<<<<<<< HEAD
+        "LogGroupName": "/aws/lambda/api-rest-dev-update"
+=======
         "LogGroupName": "/aws/lambda/api-rest-Stage-update"
+>>>>>>> develop
       }
     },
     "DeleteLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
+<<<<<<< HEAD
+        "LogGroupName": "/aws/lambda/api-rest-dev-delete"
+=======
         "LogGroupName": "/aws/lambda/api-rest-Stage-delete"
+>>>>>>> develop
       }
     },
     "IamRoleLambdaExecution": {
@@ -127,7 +147,11 @@
                 "-",
                 [
                   "api-rest",
+<<<<<<< HEAD
+                  "dev",
+=======
                   "Stage",
+>>>>>>> develop
                   "lambda"
                 ]
               ]
@@ -143,7 +167,11 @@
                   ],
                   "Resource": [
                     {
+<<<<<<< HEAD
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/api-rest-dev*:*"
+=======
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/api-rest-Stage*:*"
+>>>>>>> develop
                     }
                   ]
                 },
@@ -154,7 +182,11 @@
                   ],
                   "Resource": [
                     {
+<<<<<<< HEAD
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/api-rest-dev*:*:*"
+=======
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/api-rest-Stage*:*:*"
+>>>>>>> develop
                     }
                   ]
                 },
@@ -168,7 +200,11 @@
                     "dynamodb:UpdateItem",
                     "dynamodb:DeleteItem"
                   ],
+<<<<<<< HEAD
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/api-rest-dev"
+=======
                   "Resource": "arn:aws:dynamodb:us-east-1:*:table/api-rest-Stage"
+>>>>>>> develop
                 }
               ]
             }
@@ -180,7 +216,11 @@
             "-",
             [
               "api-rest",
+<<<<<<< HEAD
+              "dev",
+=======
               "Stage",
+>>>>>>> develop
               {
                 "Ref": "AWS::Region"
               },
@@ -190,6 +230,8 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
     "EnterpriseLogAccessIamRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -260,6 +302,7 @@
         ]
       }
     },
+>>>>>>> develop
     "CreateLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -267,16 +310,28 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
+<<<<<<< HEAD
+          "S3Key": "serverless/api-rest/dev/1621358840371-2021-05-18T17:27:20.371Z/api-rest.zip"
+        },
+        "Handler": "todos/create.create",
+        "Runtime": "python3.8",
+        "FunctionName": "api-rest-dev-create",
+=======
           "S3Key": "serverless/api-rest/Stage/1621359053994-2021-05-18T17:30:53.994Z/api-rest.zip"
         },
         "Handler": "s_create.handler",
         "Runtime": "python3.8",
         "FunctionName": "api-rest-Stage-create",
+>>>>>>> develop
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
           "Variables": {
+<<<<<<< HEAD
+            "DYNAMODB_TABLE": "api-rest-dev"
+=======
             "DYNAMODB_TABLE": "api-rest-Stage"
+>>>>>>> develop
           }
         },
         "Role": {
@@ -297,16 +352,28 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
+<<<<<<< HEAD
+          "S3Key": "serverless/api-rest/dev/1621358840371-2021-05-18T17:27:20.371Z/api-rest.zip"
+        },
+        "Handler": "todos/list.list",
+        "Runtime": "python3.8",
+        "FunctionName": "api-rest-dev-list",
+=======
           "S3Key": "serverless/api-rest/Stage/1621359053994-2021-05-18T17:30:53.994Z/api-rest.zip"
         },
         "Handler": "s_list.handler",
         "Runtime": "python3.8",
         "FunctionName": "api-rest-Stage-list",
+>>>>>>> develop
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
           "Variables": {
+<<<<<<< HEAD
+            "DYNAMODB_TABLE": "api-rest-dev"
+=======
             "DYNAMODB_TABLE": "api-rest-Stage"
+>>>>>>> develop
           }
         },
         "Role": {
@@ -327,16 +394,28 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
+<<<<<<< HEAD
+          "S3Key": "serverless/api-rest/dev/1621358840371-2021-05-18T17:27:20.371Z/api-rest.zip"
+        },
+        "Handler": "todos/get.get",
+        "Runtime": "python3.8",
+        "FunctionName": "api-rest-dev-get",
+=======
           "S3Key": "serverless/api-rest/Stage/1621359053994-2021-05-18T17:30:53.994Z/api-rest.zip"
         },
         "Handler": "s_get.handler",
         "Runtime": "python3.8",
         "FunctionName": "api-rest-Stage-get",
+>>>>>>> develop
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
           "Variables": {
+<<<<<<< HEAD
+            "DYNAMODB_TABLE": "api-rest-dev"
+=======
             "DYNAMODB_TABLE": "api-rest-Stage"
+>>>>>>> develop
           }
         },
         "Role": {
@@ -357,16 +436,28 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
+<<<<<<< HEAD
+          "S3Key": "serverless/api-rest/dev/1621358840371-2021-05-18T17:27:20.371Z/api-rest.zip"
+        },
+        "Handler": "todos/update.update",
+        "Runtime": "python3.8",
+        "FunctionName": "api-rest-dev-update",
+=======
           "S3Key": "serverless/api-rest/Stage/1621359053994-2021-05-18T17:30:53.994Z/api-rest.zip"
         },
         "Handler": "s_update.handler",
         "Runtime": "python3.8",
         "FunctionName": "api-rest-Stage-update",
+>>>>>>> develop
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
           "Variables": {
+<<<<<<< HEAD
+            "DYNAMODB_TABLE": "api-rest-dev"
+=======
             "DYNAMODB_TABLE": "api-rest-Stage"
+>>>>>>> develop
           }
         },
         "Role": {
@@ -387,16 +478,28 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
+<<<<<<< HEAD
+          "S3Key": "serverless/api-rest/dev/1621358840371-2021-05-18T17:27:20.371Z/api-rest.zip"
+        },
+        "Handler": "todos/delete.delete",
+        "Runtime": "python3.8",
+        "FunctionName": "api-rest-dev-delete",
+=======
           "S3Key": "serverless/api-rest/Stage/1621359053994-2021-05-18T17:30:53.994Z/api-rest.zip"
         },
         "Handler": "s_delete.handler",
         "Runtime": "python3.8",
         "FunctionName": "api-rest-Stage-delete",
+>>>>>>> develop
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
           "Variables": {
+<<<<<<< HEAD
+            "DYNAMODB_TABLE": "api-rest-dev"
+=======
             "DYNAMODB_TABLE": "api-rest-Stage"
+>>>>>>> develop
           }
         },
         "Role": {
@@ -410,60 +513,110 @@
         "DeleteLogGroup"
       ]
     },
+<<<<<<< HEAD
+    "CreateLambdaVersion70PyqTpPVZSwMtsfToQknkE6DcNPpPEwP9rsygdlM": {
+=======
     "ListLambdaVersionDqOQOuLif8JqONNYwh2DQGKTpQwfkWGWJ38SPZz5DwE": {
+>>>>>>> develop
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
+<<<<<<< HEAD
+          "Ref": "CreateLambdaFunction"
+        },
+        "CodeSha256": "kBH4OtknyN15R5PHyO4JF9FteOfKfLy0BKBChUX1Nd8="
+      }
+    },
+    "ListLambdaVersion1nRLdz18GrN0XHzF8MnQeiPo08r712hgC956KS4uLo": {
+=======
           "Ref": "ListLambdaFunction"
         },
         "CodeSha256": "RQ6qaLofbQDeBgMEDIKFJcIMJA9UINF87mBl9lqiaT8="
       }
     },
     "GetLambdaVersionCUu48zwCAD5muuRe5DhMrNjr2ZXer5SNhYK2EIlZm8": {
+>>>>>>> develop
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
+<<<<<<< HEAD
+          "Ref": "ListLambdaFunction"
+        },
+        "CodeSha256": "kBH4OtknyN15R5PHyO4JF9FteOfKfLy0BKBChUX1Nd8="
+      }
+    },
+    "GetLambdaVersionH2nqZSznPLGH4utnQQLVEDg9UKGAXucuIcgaN8yy4": {
+=======
           "Ref": "GetLambdaFunction"
         },
         "CodeSha256": "RQ6qaLofbQDeBgMEDIKFJcIMJA9UINF87mBl9lqiaT8="
       }
     },
     "UpdateLambdaVersionAiJn4HSCB18icQrUEevVfTJsIDvhh2aSAURf3dF7Y": {
+>>>>>>> develop
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
+<<<<<<< HEAD
+          "Ref": "GetLambdaFunction"
+        },
+        "CodeSha256": "kBH4OtknyN15R5PHyO4JF9FteOfKfLy0BKBChUX1Nd8="
+      }
+    },
+    "UpdateLambdaVersionIThYxWqqc1z2KPeOaN04eWafBZi5hzwkSppfkNdE0": {
+=======
           "Ref": "UpdateLambdaFunction"
         },
         "CodeSha256": "RQ6qaLofbQDeBgMEDIKFJcIMJA9UINF87mBl9lqiaT8="
       }
     },
     "DeleteLambdaVersionmstpS8b0IGk4Ibuxsx1fhLlNsjPIfIk53R3ELI1Wro": {
+>>>>>>> develop
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
+<<<<<<< HEAD
+          "Ref": "UpdateLambdaFunction"
+        },
+        "CodeSha256": "kBH4OtknyN15R5PHyO4JF9FteOfKfLy0BKBChUX1Nd8="
+      }
+    },
+    "DeleteLambdaVersionVjF4D3ldSprwQxQeonalDZWKi1FHBXhBm3russjmc": {
+=======
           "Ref": "DeleteLambdaFunction"
         },
         "CodeSha256": "RQ6qaLofbQDeBgMEDIKFJcIMJA9UINF87mBl9lqiaT8="
       }
     },
     "CreateLambdaVersionsbeOSO1ZHTuP86hWzLyQ3JYio0SKhBHSiBkmzeqcTQ": {
+>>>>>>> develop
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
+<<<<<<< HEAD
+          "Ref": "DeleteLambdaFunction"
+        },
+        "CodeSha256": "kBH4OtknyN15R5PHyO4JF9FteOfKfLy0BKBChUX1Nd8="
+=======
           "Ref": "CreateLambdaFunction"
         },
         "CodeSha256": "RQ6qaLofbQDeBgMEDIKFJcIMJA9UINF87mBl9lqiaT8="
+>>>>>>> develop
       }
     },
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
+<<<<<<< HEAD
+        "Name": "dev-api-rest",
+=======
         "Name": "Stage-api-rest",
+>>>>>>> develop
         "EndpointConfiguration": {
           "Types": [
             "EDGE"
@@ -804,13 +957,21 @@
         "MethodResponses": []
       }
     },
+<<<<<<< HEAD
+    "ApiGatewayDeployment1621358837408": {
+=======
     "ApiGatewayDeployment1621359048160": {
+>>>>>>> develop
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         },
+<<<<<<< HEAD
+        "StageName": "dev"
+=======
         "StageName": "Stage"
+>>>>>>> develop
       },
       "DependsOn": [
         "ApiGatewayMethodTodosOptions",
@@ -1007,6 +1168,8 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
     "ApiGatewayLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
@@ -1134,6 +1297,7 @@
         "IamRoleCustomResourcesLambdaExecution"
       ]
     },
+>>>>>>> develop
     "TodosDynamoDbTable": {
       "Type": "AWS::DynamoDB::Table",
       "DeletionPolicy": "Retain",
@@ -1154,6 +1318,9 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
+<<<<<<< HEAD
+        "TableName": "api-rest-dev"
+=======
         "TableName": "api-rest-Stage"
       }
     },
@@ -1215,6 +1382,7 @@
         "LogGroupName": {
           "Ref": "ApiGatewayLogGroup"
         }
+>>>>>>> develop
       }
     }
   },
@@ -1224,6 +1392,18 @@
         "Ref": "ServerlessDeploymentBucket"
       },
       "Export": {
+<<<<<<< HEAD
+        "Name": "sls-api-rest-dev-ServerlessDeploymentBucketName"
+      }
+    },
+    "CreateLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateLambdaVersion70PyqTpPVZSwMtsfToQknkE6DcNPpPEwP9rsygdlM"
+      },
+      "Export": {
+        "Name": "sls-api-rest-dev-CreateLambdaFunctionQualifiedArn"
+=======
         "Name": "sls-api-rest-Stage-ServerlessDeploymentBucketName"
       }
     },
@@ -1236,38 +1416,66 @@
       },
       "Export": {
         "Name": "sls-api-rest-Stage-EnterpriseLogAccessIamRole"
+>>>>>>> develop
       }
     },
     "ListLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
+<<<<<<< HEAD
+        "Ref": "ListLambdaVersion1nRLdz18GrN0XHzF8MnQeiPo08r712hgC956KS4uLo"
+      },
+      "Export": {
+        "Name": "sls-api-rest-dev-ListLambdaFunctionQualifiedArn"
+=======
         "Ref": "ListLambdaVersionDqOQOuLif8JqONNYwh2DQGKTpQwfkWGWJ38SPZz5DwE"
       },
       "Export": {
         "Name": "sls-api-rest-Stage-ListLambdaFunctionQualifiedArn"
+>>>>>>> develop
       }
     },
     "GetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
+<<<<<<< HEAD
+        "Ref": "GetLambdaVersionH2nqZSznPLGH4utnQQLVEDg9UKGAXucuIcgaN8yy4"
+      },
+      "Export": {
+        "Name": "sls-api-rest-dev-GetLambdaFunctionQualifiedArn"
+=======
         "Ref": "GetLambdaVersionCUu48zwCAD5muuRe5DhMrNjr2ZXer5SNhYK2EIlZm8"
       },
       "Export": {
         "Name": "sls-api-rest-Stage-GetLambdaFunctionQualifiedArn"
+>>>>>>> develop
       }
     },
     "UpdateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
+<<<<<<< HEAD
+        "Ref": "UpdateLambdaVersionIThYxWqqc1z2KPeOaN04eWafBZi5hzwkSppfkNdE0"
+      },
+      "Export": {
+        "Name": "sls-api-rest-dev-UpdateLambdaFunctionQualifiedArn"
+=======
         "Ref": "UpdateLambdaVersionAiJn4HSCB18icQrUEevVfTJsIDvhh2aSAURf3dF7Y"
       },
       "Export": {
         "Name": "sls-api-rest-Stage-UpdateLambdaFunctionQualifiedArn"
+>>>>>>> develop
       }
     },
     "DeleteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
+<<<<<<< HEAD
+        "Ref": "DeleteLambdaVersionVjF4D3ldSprwQxQeonalDZWKi1FHBXhBm3russjmc"
+      },
+      "Export": {
+        "Name": "sls-api-rest-dev-DeleteLambdaFunctionQualifiedArn"
+=======
         "Ref": "DeleteLambdaVersionmstpS8b0IGk4Ibuxsx1fhLlNsjPIfIk53R3ELI1Wro"
       },
       "Export": {
@@ -1281,6 +1489,7 @@
       },
       "Export": {
         "Name": "sls-api-rest-Stage-CreateLambdaFunctionQualifiedArn"
+>>>>>>> develop
       }
     },
     "ServiceEndpoint": {
@@ -1301,12 +1510,20 @@
             {
               "Ref": "AWS::URLSuffix"
             },
+<<<<<<< HEAD
+            "/dev"
+=======
             "/Stage"
+>>>>>>> develop
           ]
         ]
       },
       "Export": {
+<<<<<<< HEAD
+        "Name": "sls-api-rest-dev-ServiceEndpoint"
+=======
         "Name": "sls-api-rest-Stage-ServiceEndpoint"
+>>>>>>> develop
       }
     }
   }
