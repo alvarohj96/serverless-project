@@ -15,7 +15,7 @@ def translate(event, context):
         }
     )
     
-    
+    # call to the AWS Translate Text function
     client = boto3.client(service_name='translate')
     result = client.translate_text(Text=item_translate['Item']['text'], SourceLanguageCode="auto", TargetLanguageCode=event['pathParameters']['language'])  
 
