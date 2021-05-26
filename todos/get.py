@@ -5,6 +5,7 @@ from todos import decimalencoder
 import boto3
 dynamodb = boto3.resource('dynamodb')
 
+#Comentario de prueba 2
 
 def get(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
